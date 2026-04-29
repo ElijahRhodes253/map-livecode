@@ -23,11 +23,14 @@ public class Practice {
       scores.put("Stace", newScore);
 
       //For testing
-      System.out.println(scores.get("Stace"));
+      //System.out.println(scores.get("Stace"));
       //System.out.println(schools.get("Damien"));
-      printSS(schools);
-      printSI(scores);
+      //printSS(schools);
+      //printSI(scores);
       //System.out.println(schools);
+
+      String[] tArray = {"yes", "I", "will", "yes", "I", "said", "yes"};
+      printSI(countMap(tArray));
 
     }
 
@@ -42,7 +45,19 @@ public class Practice {
 
     public static Map<String, Integer> countMap(String[] words)
     {
-      
+      Map<String, Integer> tMap = new HashMap<>();
+      for(int i = 0; i < words.length; i++)
+      {
+        if(tMap.containsKey(words[i]))
+        {
+          tMap.put(words[i], tMap.get(words[i]) + 1);
+        }
+        else
+        {
+          tMap.put(words[i], 1);
+        }
+      }
+      return tMap;
     }
 
     //For personal use
